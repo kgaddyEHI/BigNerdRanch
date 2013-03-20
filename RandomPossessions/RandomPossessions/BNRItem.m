@@ -24,10 +24,9 @@
                                                                        '0' + rand() % 10,
                                                                        'A' + rand() % 26,
                                                                        '0' + rand() % 10];
-    
+
     NSString *randomName = [NSString stringWithFormat:@"%@ %@", [randomAdjectiveList objectAtIndex:adjectiveIndex], [randomNouns objectAtIndex:nounIndex]];
     return [[self alloc] initWithItemName:randomName valueInDollars:randomValue serialNumber:randomSerial];
-    
     
 }
 
@@ -57,6 +56,15 @@
           dateCreated = [[NSDate alloc]init];
     }
     return self;
+}
+-(id)initWithNameAndSerial:(NSString *)name serialNumber:(NSString *)sNumber
+{
+    self=[super init];
+    if(self)
+    {
+        return [self initWithItemName:name valueInDollars:0 serialNumber:sNumber];
+    }
+    
 }
 
 
