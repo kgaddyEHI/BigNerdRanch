@@ -62,9 +62,9 @@
     self=[super init];
     if(self)
     {
-        return [self initWithItemName:name valueInDollars:0 serialNumber:sNumber];
+        self = [self initWithItemName:name valueInDollars:0 serialNumber:sNumber];
     }
-    
+    return self;
 }
 
 
