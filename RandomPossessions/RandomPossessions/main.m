@@ -15,17 +15,31 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         BNRContainer *container = [[BNRContainer alloc]init];
-        [container setContainerName:@"Grocery List"];
-        [container setContainerValueInDollars:300];
+        [container setContainerName:@"Possesion List"];
+        [container setContainerValueInDollars:35];
+        
+        BNRItem *backPack = [[BNRItem alloc]init];
+        [backPack setItemName:@"Backpack"];
+        [backPack setValuesInDollars:30];
+        [container addSubItem:backPack];
+        
+        
+        BNRItem *calculator = [[BNRItem alloc]init];
+        [calculator setItemName:@"calculator"];
+        [calculator setValuesInDollars:11];
+        [container addSubItem:calculator];
+        
+        [backPack setContainedItem:calculator];
+        
         //NSMutableArray *items = [[NSMutableArray alloc]init];
+        
+        /*
         for(int i=0;i<10; i++)
         {
             BNRItem *p = [BNRItem randomItem];
             [container addSubItem:p];
-           // NSLog(@"%@",p);
-            //[items addObject:p];
-            
         }
+         */
         
         
         //for(BNRItem *item in items)
