@@ -10,9 +10,9 @@
 
 @interface BNRItem : NSObject
 
-@property (nonatomic,readwrite, strong) NSString *itemName;
+@property (nonatomic,copy) NSString *itemName;
 @property(nonatomic,readwrite,strong)BNRItem *containedItem;
-@property(nonatomic,readwrite,strong)NSString *serialNumber;
+@property(nonatomic,copy)NSString *serialNumber;
 @property(nonatomic)int valueInDollars;
 @property(nonatomic,readonly,strong)NSDate *dateCreated;
 @property(nonatomic, readwrite, weak)BNRItem *container;
