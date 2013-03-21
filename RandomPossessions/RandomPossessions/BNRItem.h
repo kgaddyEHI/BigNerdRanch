@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface BNRItem : NSObject
-{
-    NSString *itemName;
-    NSString *serialNumber;
-    int valueIndollars;
-    NSDate *dateCreated;
-    BNRItem *containedItem;
-    __weak BNRItem *container;
-    
-}
+
+@property (nonatomic,readwrite, strong) NSString *itemName;
+@property(nonatomic,readwrite,strong)BNRItem *containedItem;
+@property(nonatomic,readwrite,strong)NSString *serialNumber;
+@property(nonatomic)int valueInDollars;
+@property(nonatomic,readonly,strong)NSDate *dateCreated;
+@property(nonatomic, readwrite, weak)BNRItem *container;
+
+
+
 
 +(BNRItem *)randomItem;
 

@@ -9,6 +9,12 @@
 #import "BNRItem.h"
 
 @implementation BNRItem
+@synthesize itemName = _itemName;
+@synthesize serialNumber=_serialNumber;
+@synthesize valueInDollars=_valueInDollars;
+@synthesize container = _container;
+@synthesize containedItem = _containedItem;
+
 +(id)randomItem
 {
     NSArray *randomAdjectiveList = [NSArray arrayWithObjects:@"Fluffy",@"Rusty",@"Shiny", nil];
@@ -33,10 +39,10 @@
 -(NSString *)description
 {
     NSString *descriptionString = [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
-                                    itemName,
-                                    serialNumber,
-                                    valueIndollars,
-                                    dateCreated];
+                                    [self itemName],
+                                    [self serialNumber],
+                                    [self valueInDollars],
+                                   [self dateCreated]];
     return descriptionString;
 }
 
@@ -53,7 +59,6 @@
         [self setItemName:name];
         [self setSerialNumber:sNumber];
         [self setValuesInDollars:value];
-          dateCreated = [[NSDate alloc]init];
     }
     return self;
 }
@@ -70,44 +75,44 @@
 
 -(NSString *)itemName
 {
-    return itemName;
+    return self.itemName;
 }
 
 -(void)setItemName:(NSString *)newItemName
 {
-    itemName = newItemName;
+    _itemName = newItemName;
 }
 
 -(void)setSerialNumber:(NSString *)str
 {
-    serialNumber=str;
+    _serialNumber = str;
 }
 
 -(NSString *)serialNumber
 {
-    return serialNumber;
+    return self.serialNumber;
 }
 
 
 -(void)setValuesInDollars:(int)i
 {
-    valueIndollars = i;
+    _valueInDollars=i;
 }
 
 -(int)valueInDollars
 {
-    return valueIndollars;
+    return _valueInDollars;
 }
 
 
 -(NSDate *)dateCreated
 {
-
-    return dateCreated;
+    return self.dateCreated;
 }
 
--(void)setContainedItem:(BNRItem *)i{
-    containedItem  = i;
+-(void)setContainedItem:(BNRItem *)i
+{
+    _containedItem = i;
     
     //when given an item to contain, the contained item will be given a pointer to it's container.
     [i setContainer:self];
@@ -115,18 +120,18 @@
 
 -(BNRItem *)containedItem
 {
-    return containedItem;
+    return self.containedItem;
 }
 
 
 -(void) setContainer:(BNRItem *)i
 {
-    container =i;
+    _container=i;
 }
 
 -(BNRItem *)container
 {
-    return container;
+    return self.container;
 }
 
 @end

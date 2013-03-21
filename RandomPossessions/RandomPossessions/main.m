@@ -14,9 +14,12 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
+        
+        
         BNRContainer *container = [[BNRContainer alloc]init];
         [container setContainerName:@"Possesion List"];
         [container setContainerValueInDollars:35];
+        
         
         BNRItem *backPack = [[BNRItem alloc]init];
         [backPack setItemName:@"Backpack"];
@@ -30,6 +33,9 @@ int main(int argc, const char * argv[])
         [container addSubItem:calculator];
         
         [backPack setContainedItem:calculator];
+         
+         
+         
         
         //NSMutableArray *items = [[NSMutableArray alloc]init];
         
